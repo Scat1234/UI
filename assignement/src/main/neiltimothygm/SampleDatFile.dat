@@ -1,0 +1,62 @@
+* STMT   FUNC  AND    FIELD     FIELD                                           
+*  ID    CODE  OR     NAME      VALUES                                          
+*              EXC                                                              
+*------  ----  ---  ----------  -------------------------------------           
+*123456  1234  123  1234567890  1234567890123456789012345678901234567           
+*------  ----  ---  ----------  -------------------------------------           
+ MTHTBL  TABL       MTH         ORDER FLOW CONTROL TABLE                        
+ OFC001  SPEC       EFF DATE    000000,999999                                   
+         SEL        CPL         102                                             
+         EVAL       E MODEL     6AF69,6AJ69,6AK69,6AL69                         
+         SOL        ERROR       ORDER HOLD ORDER FLOW                           
+ OFC002  SPEC       EFF DATE    000000,999999                                   
+         SEL        CPL         102                                             
+         EVAL       E MODEL     6AB69,6AC69,6AD69,6AE69,6AG69                   
+         SOL        ERROR       ORDER HOLD ORDER FLOW                           
+ OFC003  SPEC       EFF DATE    000000,999999                                   
+         SEL        CPL         102                                             
+         EVAL       E MODEL     6AB47,6AC47,6AD47,6AE47,6AG47                   
+         SOL        ERROR       ORDER HOLD ORDER FLOW                           
+ OFC004  SPEC       EFF DATE    000000,999999                                   
+         SEL        CPL         102                                             
+         EVAL       E MODEL     1A*37                                           
+         SOL        ERROR       ORDER HOLD ORDER FLOW                           
+ OFC005  SPEC       EFF DATE    000000,999999                                   
+         SEL        CPL         102                                             
+         EVAL       E MODEL     1A*67                                           
+         SOL        ERROR       ORDER HOLD ORDER FLOW                           
+*******  ****  ***  **********  ****************************************        
+ OFC006  SPEC       EFF DATE    000000,999999                                   
+         SEL        CPL         102                                             
+                    E MODEL     6AB47,6AC47,6AD47,6AE47,6AG47                   
+                    OPT         -R6S                                            
+         SOL        ERROR       NO RELEASE ATS CPE W/O R6S                      
+ OFC007  SPEC       EFF DATE    000000,999999                                   
+         SEL        CPL         102                                             
+                    E MODEL     6AB69,6AC69,6AD69,6AE69,6AG69                   
+                    OPT         -R6W                                            
+         SOL        ERROR       NO RELEASE ATS SED W/O R6W                      
+ OFC008  SPEC       EFF DATE    000000,999999                                   
+         SEL        CPL         102                                             
+                    E MODEL     6AF69,6AJ69,6AK69,6AL69                         
+                    OPT         -R8R                                            
+         SOL        ERROR       NO RELEASE CTS W/O R8R                          
+ OFC009  SPEC       EFF DATE    000000,999999                                   
+         SEL        CPL         102                                             
+                    E MODEL     1A*37                                           
+                    OPT         -R8J                                            
+         SOL        ERROR       NO RELEASE CAMARO CPE W/O R8J                   
+ OFC010  SPEC       EFF DATE    000000,999999                                   
+         SEL        CPL         102                                             
+                    E MODEL     1A*67                                           
+                    OPT         -R6I                                            
+         SOL        ERROR       NO RELEASE CAMARO CVE W/O R6I                   
+ OFC011  SPEC       EFF DATE    000000,999999                                   
+         SEL        CPL         102                                             
+                    E MODEL     1A***,6A***                                     
+                    OPT         &CW1/CV2&UKC&UFG                                
+         SOL        ERROR       STOP ORDER SIDE BLIND ZONE                      
+*******  ****  ***  **********  ****************************************        
+                    ORDER HOLD  VNGGC013 102 CUSTOMER RQST 11/13(11/20)         
+                    ORDER HOLD  VNNHP713 102 E-FLEET A1Z 11/27                  
+                    ORDER RLSE  VPPCDC13 102 ADAM ROMANKO                       
